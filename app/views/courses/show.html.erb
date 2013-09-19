@@ -1,0 +1,9 @@
+<h1><%=@course.title%></h1>
+<p>
+	<%=@course.short_title%><br />
+	<%=@course.summary%>
+</p>
+
+<%= link_to("Add Objectives",course_objectives_path(@course))%>
+<%= link_to("Edit", edit_course_path(@course))%>
+<%= link_to("Delete", @course, method: :delete, data:{ confirm: 'Are you sure?'})%>

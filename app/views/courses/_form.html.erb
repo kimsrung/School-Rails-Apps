@@ -1,0 +1,17 @@
+<%= form_for @course do |f|%>
+	<p>
+		<%=f.label :title%>
+		<%=f.text_field :title, size: 200, placeholder: "type new course title"%>
+	</p>
+	<p>
+		<%=f.label :short_title%>
+		<%=f.text_field :short_title, size: 200, placeholder: "type new course short_title"%>
+	</p>
+	<p>
+		<%=f.label :summary%>
+		<%=f.text_area :summary, cols: 40, rows: 7%>
+	</p>
+	<p>
+		<%=f.submit%>
+	</p>
+<%end%>
