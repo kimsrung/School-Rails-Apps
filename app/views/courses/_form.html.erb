@@ -12,6 +12,7 @@
 		<%=f.text_area :summary, cols: 40, rows: 7%>
 	</p>
 	<p>
-		<%=f.submit%>
+		<%=f.submit%> |
+		<%= link_to "Cancel", courses_path %>
 	</p>
 <%end%>

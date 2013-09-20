@@ -1,12 +1,20 @@
 <h1>Edit objectives for <%=@course.title%></h1>
 
 <%= form_tag do %>
-	<%=text_field_tag("desc")%>
+	<%=text_field_tag("description")%>
 	<%=submit_tag "Add New"%>
 <%end%> 
 
 <h2>Objectives</h2>
-<% @objectives.each do |objective|%>
-	<%=objective.description%>
-	<%= link_to("Edit", edit_course_objective_path(@course))%>
-<%end %>
+<table>
+	<% @objectives.each do |objective|%>
+		<tr>
+			<td>
+				<%=objective.description%>
+			</td>
+			<td>
+				<%= link_to("Edit", edit_course_objective_path(@course, objective))%>
+			</td>
+		</tr>
+	<%end %>
+</table>

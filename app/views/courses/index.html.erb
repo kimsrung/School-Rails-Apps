@@ -1,11 +1,30 @@
-
-<h1>CodeLabAsia</h1>
-<ul>
-	
-<% @courses.each do |course|%>
-	<li><h1><%= link_to(course.title,course)%></h1></li>
-	<li><%=course.short_title%></li>
-	<%=course.summary%>
-<%end%>
-</ul>
-<%= link_to("New Course", new_course_path)%>
+<% @courses.each do |course| %>
+<article id="course">
+	<table>
+		<tr>
+			<th>
+				Course Title
+			</th>
+			<td>
+				<%= link_to course.title, course_path(course) %>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Course Short Title
+			</th>
+			<td>
+				<%= course.short_title %>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Course Summary
+			</th>
+			<td>
+				<%= course.summary %>
+			</td>
+		</tr>
+	</table>
+</article>
+<% end %>

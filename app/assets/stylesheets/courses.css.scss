@@ -1,3 +1,48 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+article#course {
+	p {
+		padding: .5em 0;
+		font-size: 1.15em;
+		line-height: 1.25em;
+	}
+
+	h2 {
+		margin: .5em 0;
+		font-size: 115%;
+		color: $secondary-text-color;
+	}
+
+	h3 {
+		padding-bottom: .5em;
+		margin: 1em 0;
+		font-size: 120%;
+		border-bottom: 1px solid $subdued-color;
+
+		&.no-rule {
+			border: none;
+		}
+	}
+
+	footer {
+		margin: 2em 0;
+		text-align: center;
+
+		nav {
+			margin-top: 2em;
+		}
+	}
+	table {
+		margin: 2em 0 0 2em;
+		width: 600px;
+	}
+
+	th {
+		align: right;
+		width: 8em;
+	}
+}
