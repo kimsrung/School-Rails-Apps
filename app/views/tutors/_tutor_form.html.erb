@@ -1,0 +1,75 @@
+<%= form_for @tutor do |f| %>
+<fieldset>
+	<table>
+		<tr>
+			<td>
+				<%= f.label :title %>
+			</td>
+			<td>
+				<%= f.select :title, Tutor::TITLE %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :first_name %>
+			</td>
+			<td>
+				<%= f.text_field :first_name, size: 40 %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :last_name %>
+			</td>
+			<td>
+				<%= f.text_field :last_name, size: 40 %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :designatory %>
+			</td>
+			<td>
+				<% Tutor::DESIGNATORY.each do |item| %>
+					<%= f.check_box(:designatory, { :multiple => true}, item)%> <%=item%>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :daily_rate %>
+			</td>
+			<td>
+				<%= f.number_field :daily_rate %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Languages" %>
+			</td>
+			<td>
+				<%= collection_select(:tutor, :language_id, Language.all, :id, :name, 
+					{},
+					{:multiple => true, :prompt => true}	
+				)%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Skillset" %>
+			</td>
+			<td>
+				<%= f.collection_check_boxes(:skill_id, Skill.all, :id, :name) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :publish %>
+			</td>
+			<td>
+				<%= f.check_box(:publish, {}) %> Publish tutor
+			</td>
+		</tr>
+	</table>
+</fieldset>
+<% end %>
