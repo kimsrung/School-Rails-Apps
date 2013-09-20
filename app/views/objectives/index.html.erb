@@ -1,4 +1,5 @@
 <h1>Edit objectives for <%=@course.title%></h1>
+<<<<<<< HEAD
 
 <%= form_tag do %>
 	<%=text_field_tag("description")%>
@@ -18,3 +19,18 @@
 		</tr>
 	<%end %>
 </table>
+=======
+<%= render 'form' %>
+<h2>Objectives</h2>
+
+<% @objectives.each do |objective|%>
+	<% if objective.description !=nil%>
+		<p>
+			<%=objective.description%>
+			<%= link_to("Edit", edit_course_objective_path(@course,objective))%>|
+			<%= link_to("Delete", course_objective_path(@course,objective), method: :delete, data: {confirm: 'Are you sure?'} )%>
+		</p>
+	<%end%>
+
+<%end %>
+>>>>>>> 0e73436e242cabfc0d6878f5f9d9f6ee3bfabb73
